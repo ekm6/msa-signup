@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { auth } from "../services/firebase";
 import { db } from "../services/firebase"
-
+import {deserialize} from "../helpers/serialize"
 export default class Status extends Component {
     constructor(props) {
       super(props);
@@ -33,6 +33,7 @@ export default class Status extends Component {
       return (
         <div>
           <div className="chats">
+            <h1>{deserialize(this.props.match.params.date)}</h1>
             {this.state.registeredPlayers.map(chat => {
               return <p key={chat.timestamp}>{chat.content}</p>
             })}

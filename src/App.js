@@ -78,7 +78,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <PrivateRoute
-            path="/status"
+            path="/status/:date"
             authenticated={this.state.authenticated}
             component={Status}
           ></PrivateRoute>
